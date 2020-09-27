@@ -33,6 +33,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   # https://github.com/thoughtbot/factory_bot_rails
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
 end
 
 group :development do

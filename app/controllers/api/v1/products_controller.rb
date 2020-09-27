@@ -10,6 +10,8 @@ module Api
         else
           render status: :bad_request, json: {}
         end
+      rescue ActiveRecord::RecordNotFound
+        render status: :bad_request, json: {}
       end
     end
   end

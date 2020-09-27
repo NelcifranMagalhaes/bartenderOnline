@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :products
   resources :tables
   resources :companies
+  resources :demands
   root to: 'companies#index'
 
   namespace :api do

@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 2020_09_23_025740) do
   create_table "demands", force: :cascade do |t|
     t.bigint "table_id"
     t.bigint "product_id"
+    t.bigint "company_id"
     t.integer "product_quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_demands_on_company_id"
     t.index ["product_id"], name: "index_demands_on_product_id"
     t.index ["table_id"], name: "index_demands_on_table_id"
   end

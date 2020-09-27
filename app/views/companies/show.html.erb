@@ -26,7 +26,41 @@
           </header>
         </div>
       <% end %>
+      <p class="title">Mesas</p>
+      Mesas Disponivéis: 
+      <% @company.tables.map(&:table_number).each do |n|%>
+        <%= n %>/
+      <% end %>
     </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-danger">
+      <p class="title">Pedidos</p>
+      <p class="subtitle">Pedidos enviados pelos clientes</p>
+      <div class="content">
+        <%@table_ids.each do |table_id|  %>
+          <% table = Table.find(table_id)  %>
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Mesa: <%= table.table_number%>
+              </p>
+              <span class="icon">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </span>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <% table.demands.each do |d| %>
+                  <%= Product.find(d.product_id).name %> - <%= d.product_quantity %> 
+                  <br>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </article>
   </div>
 </div>
 <div class="columns">
