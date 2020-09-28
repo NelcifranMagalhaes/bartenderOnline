@@ -50,3 +50,4 @@ gem 'kaminari'
 # https://github.com/faker-ruby/faker
 gem 'faker'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'rqrcode'

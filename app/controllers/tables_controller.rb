@@ -1,6 +1,6 @@
 class TablesController < ApplicationController
   before_action :set_table, only: [:show, :edit, :update, :destroy]
-
+  require 'rqrcode'
   # GET /tables
   # GET /tables.json
   def index
@@ -10,6 +10,16 @@ class TablesController < ApplicationController
   # GET /tables/1
   # GET /tables/1.json
   def show
+    url = "#{request.base_url}/api/v1/company/#{@table.company.id}/all_products"
+    
+    qrcode = RQRCode::QRCode.new(url)
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    )
   end
 
   # GET /tables/new

@@ -1,4 +1,6 @@
 class Table < ApplicationRecord
+  require 'rqrcode'
+
   belongs_to :company
   has_many :demands
   has_many :products, through: :demands
