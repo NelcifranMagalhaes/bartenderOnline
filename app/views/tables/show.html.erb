@@ -1,15 +1,16 @@
 
 <p id="notice"><%= notice %></p>
-
-<div class="tile is-ancestor">
-  <div class="tile is-4 is-vertical is-parent">
-    <div class="tile is-child box">
-      <p class="title">Número</p>
-      <p><%= @table.table_number %></p>
-    </div>
-    <div class="tile is-child box">
-      <p class="title">Bar</p>
-      <p><%= @table.company.name %></p>
+<div class="box notification is-primary">
+  <div class="tile is-ancestor">
+    <div class="tile is-4 is-vertical is-parent">
+      <div class="tile is-child box">
+        <p class="title">Número</p>
+        <p><%= @table.table_number %></p>
+      </div>
+      <div class="tile is-child box">
+        <p class="title">Bar</p>
+        <p><%= @table.company.name %></p>
+      </div>
     </div>
   </div>
 </div>
