@@ -29,7 +29,7 @@
       <p class="title">Mesas</p>
       Mesas Disponivéis: 
       <% @company.tables.map(&:table_number).each do |n|%>
-        <%= n %>/
+        <span class="tag is-info"><%= n %></span>
       <% end %>
     </div>
   </div>
