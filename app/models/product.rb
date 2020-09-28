@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product < ApplicationRecord
   belongs_to :company
   has_many :demands
@@ -6,5 +8,4 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :company_id, presence: true
   validates :quantity, presence: true
-
 end

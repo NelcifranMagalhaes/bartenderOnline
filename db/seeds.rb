@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -44,8 +46,6 @@ Demand.create!(product_id: company_1_products.sample.id, table_id: company_1_tab
 Demand.create!(product_id: company_1_products.sample.id, table_id: company_1_tables.sample.id, product_quantity: 3, company_id: company1.id)
 Demand.create!(product_id: company_1_products.sample.id, table_id: company_1_tables.sample.id, product_quantity: 3, company_id: company1.id)
 Demand.create!(product_id: company_1_products.sample.id, table_id: company_1_tables.sample.id, product_quantity: 3, company_id: company1.id)
-
-
 
 Demand.create!(product_id: company_2_products.sample.id, table_id: company_2_tables.sample.id, product_quantity: 3, company_id: company2.id)
 Demand.create!(product_id: company_2_products.sample.id, table_id: company_2_tables.sample.id, product_quantity: 3, company_id: company2.id)

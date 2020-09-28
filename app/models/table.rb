@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Table < ApplicationRecord
   require 'rqrcode'
 
@@ -7,5 +9,4 @@ class Table < ApplicationRecord
 
   validates :table_number, presence: true
   validates :company_id, presence: true
-
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class TablesController < ApplicationController
-  before_action :set_table, only: [:show, :edit, :update, :destroy]
+  before_action :set_table, only: %i[show edit update destroy]
   require 'rqrcode'
   # GET /tables
   # GET /tables.json
@@ -11,7 +13,7 @@ class TablesController < ApplicationController
   # GET /tables/1.json
   def show
     url = "#{request.base_url}/api/v1/company/#{@table.company.id}/all_products"
-    
+
     qrcode = RQRCode::QRCode.new(url)
     @svg = qrcode.as_svg(
       offset: 0,
@@ -28,8 +30,7 @@ class TablesController < ApplicationController
   end
 
   # GET /tables/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tables
   # POST /tables.json
@@ -72,13 +73,14 @@ class TablesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_table
-      @table = Table.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def table_params
-      params.require(:table).permit(:table_number, :company_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_table
+    @table = Table.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def table_params
+    params.require(:table).permit(:table_number, :company_id)
+  end
 end

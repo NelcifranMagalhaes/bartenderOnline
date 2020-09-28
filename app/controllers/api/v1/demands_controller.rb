@@ -6,7 +6,6 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def create
-        
         @company = Company.find(params[:id])
         @table = Table.find(params[:table])
 
@@ -14,7 +13,6 @@ module Api
       rescue ActiveRecord::RecordNotFound
         render status: :bad_request, json: {}
       end
-      
     end
   end
 end
