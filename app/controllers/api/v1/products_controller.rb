@@ -8,11 +8,7 @@ module Api
         @table = Table.find(params[:table_id])
         if @company.present?
           hash = { "table_number": @table.table_number.to_s }
-          products = {}
-          @company.products.each do |product|
-            products[product.name] = product.quantity
-          end
-          hash[:products] = products
+          hash[:products] = @company.products
           render status: :ok, json: hash
         else
           render status: :bad_request, json: {}
