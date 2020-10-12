@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'company/:id/all_products', to: 'products#all_products'
+      get 'company/:id/table/:table_id/all_products', to: 'products#all_products'
       post 'company/:id/create_demand', to: 'demands#create'
     end
   end

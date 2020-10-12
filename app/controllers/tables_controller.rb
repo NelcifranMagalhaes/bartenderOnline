@@ -12,7 +12,7 @@ class TablesController < ApplicationController
   # GET /tables/1
   # GET /tables/1.json
   def show
-    url = "#{request.base_url}/api/v1/company/#{@table.company.id}/all_products"
+    url = "#{request.base_url}/api/v1/company/#{@table.company.id}/table/#{@table.id}/all_products"
 
     qrcode = RQRCode::QRCode.new(url)
     @svg = qrcode.as_svg(
