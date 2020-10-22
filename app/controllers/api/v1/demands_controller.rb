@@ -9,7 +9,7 @@ module Api
         @company = Company.find(params[:id]) # acha de que bar pertence a mesa
 
         data = params["_json"] # pega os dados vindos pela api
-        @table =  @company.tables.find_by(table_number: data.first[1].to_i) # acha a mesa que foi scaneada
+        @table = @company.tables.find_by(table_number: data.first[1].to_i) # acha a mesa que foi scaneada
         data.shift # deleta a mesa do array, deixando somente os produtos
 
         # percorre o array de produtos com suas quantidades e cria um Pedido
